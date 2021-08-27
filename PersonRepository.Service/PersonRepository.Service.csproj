@@ -72,6 +72,10 @@
       <Project>{b557cd54-35f3-4003-a6ee-cf1f3edfa76e}</Project>
       <Name>PeopleViewer.SharedObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
+      <Project>{9382f954-4af4-4dcf-8727-77cde901d6a4}</Project>
+      <Name>PersonRepository.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MyService\" />

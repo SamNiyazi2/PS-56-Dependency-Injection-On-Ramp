@@ -1,11 +1,15 @@
 ﻿using PeopleViewer.SharedObjects;
+using PersonRepository.Interface;
 using PersonRepository.Service.MyService;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace PersonRepository.Service
 {
-    public class ServiceRepository
+
+    // 08/27/2021 03:14 pm - SSN - [20210827-1500] - [002] - M02-03 - Demo: Adding the repository interface
+    // public class ServiceRepository
+    public class ServiceRepository : IPersonRepository
     {
         PersonServiceClient ServiceProxy = new PersonServiceClient();
 

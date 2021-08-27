@@ -1,4 +1,5 @@
 ﻿using PeopleViewer.SharedObjects;
+using PersonRepository.Interface;
 using PersonRepository.Service;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,10 @@ namespace PeopleViewer.Presentation
 {
     public class PeopleViewerViewModel : INotifyPropertyChanged
     {
-        protected ServiceRepository Repository;
+
+        // 08/27/2021 03:19 pm - SSN - [20210827-1500] - [003] - M02-03 - Demo: Adding the repository interface
+        // protected ServiceRepository Repository;
+        protected IPersonRepository Repository;
 
         private IEnumerable<Person> _people;
         public IEnumerable<Person> People
@@ -52,7 +56,7 @@ namespace PeopleViewer.Presentation
             {
                 return true;
             }
-        #endregion RefreshCommand Standard Stuff
+            #endregion RefreshCommand Standard Stuff
 
             public void Execute(object parameter)
             {
@@ -82,7 +86,7 @@ namespace PeopleViewer.Presentation
                 return true;
             }
 
-        #endregion
+            #endregion
 
             public void Execute(object parameter)
             {

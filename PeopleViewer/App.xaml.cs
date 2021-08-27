@@ -1,12 +1,6 @@
 ﻿using PeopleViewer.Presentation;
 using PersonRepository.Interface;
 using PersonRepository.Service;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PeopleViewer
@@ -19,12 +13,18 @@ namespace PeopleViewer
         {
             base.OnStartup(e);
 
-            IPersonRepository personRepository = new ServiceRepository();
-            PeopleViewerViewModel vm = new PeopleViewerViewModel(personRepository);
+            PeopleViewerViewModel vm = ComposeViewModel();
             Application.Current.MainWindow = new PeopleViewerWindow(vm);
             Application.Current.MainWindow.Title = "Loose Coupling - People Viewer";
             Application.Current.MainWindow.Show();
 
+        }
+
+        private static PeopleViewerViewModel ComposeViewModel()
+        {
+            IPersonRepository personRepository = new ServiceRepository();
+            PeopleViewerViewModel vm = new PeopleViewerViewModel(personRepository);
+            return vm;
         }
     }
 }

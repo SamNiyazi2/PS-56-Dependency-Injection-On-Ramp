@@ -53,19 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="PeopleViewerWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters.cs" />
-    <Compile Include="PeopleViewerWindow.xaml.cs">
-      <DependentUpon>PeopleViewerWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -104,6 +96,10 @@
     <ProjectReference Include="..\PeopleViewer.SharedObjects\PeopleViewer.SharedObjects.csproj">
       <Project>{b557cd54-35f3-4003-a6ee-cf1f3edfa76e}</Project>
       <Name>PeopleViewer.SharedObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PeopleViewer.View\PeopleViewer.View.csproj">
+      <Project>{d5ea2b55-ce76-49f6-8ff7-b62723ac45d5}</Project>
+      <Name>PeopleViewer.View</Name>
     </ProjectReference>
     <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
       <Project>{9382F954-4AF4-4DCF-8727-77CDE901D6A4}</Project>

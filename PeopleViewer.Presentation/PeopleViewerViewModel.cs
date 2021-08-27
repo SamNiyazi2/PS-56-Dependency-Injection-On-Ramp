@@ -1,6 +1,5 @@
 ﻿using PeopleViewer.SharedObjects;
 using PersonRepository.Interface;
-using PersonRepository.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,9 +27,11 @@ namespace PeopleViewer.Presentation
             }
         }
 
-        public PeopleViewerViewModel()
+        // 08/27/2021 03:26 pm - SSN - [20210827-1522] - [001] - M02-04 - Demo: Constructor injection
+        public PeopleViewerViewModel(IPersonRepository repository)
         {
-            Repository = new ServiceRepository();
+            //Repository = new ServiceRepository();
+            Repository = repository;
         }
 
         #region Commands

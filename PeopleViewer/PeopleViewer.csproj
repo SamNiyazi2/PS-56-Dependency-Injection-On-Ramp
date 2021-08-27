@@ -105,6 +105,14 @@
       <Project>{b557cd54-35f3-4003-a6ee-cf1f3edfa76e}</Project>
       <Name>PeopleViewer.SharedObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
+      <Project>{9382F954-4AF4-4DCF-8727-77CDE901D6A4}</Project>
+      <Name>PersonRepository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.Service\PersonRepository.Service.csproj">
+      <Project>{8EBA64E3-198D-4456-B9BF-D7EF9BD2CBCE}</Project>
+      <Name>PersonRepository.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

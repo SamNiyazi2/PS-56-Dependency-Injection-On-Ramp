@@ -3,6 +3,7 @@ using PersonRepository.CSV;
 using PersonRepository.Interface;
 using PersonRepository.Service;
 using PersonRepository.SQL;
+using PersonRepository.CachingDecorator;
 using System.Windows;
 
 namespace PeopleViewer
@@ -28,7 +29,12 @@ namespace PeopleViewer
             // 08/30/2021 06:47 am - SSN - [20210827-1701] - [007] - M03-03 - Demo: Additional repositories
             // IPersonRepository personRepository = new ServiceRepository();
             // IPersonRepository personRepository = new CSVRepository("CSVFileName");
-            IPersonRepository personRepository = new SQLRepository();
+            
+            // 08/30/2021 08:00 am - SSN - [20210830-0800] - [001] - M03-05 - Demo: Using the caching repository
+
+            IPersonRepository wrappedRepository = new SQLRepository();
+
+            IPersonRepository personRepository = new CachingRepository(wrappedRepository);
             PeopleViewerViewModel vm = new PeopleViewerViewModel(personRepository);
             return vm;
         }

@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonRepository.CSV", "Per
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonRepository.SQL", "PersonRepository.SQL\PersonRepository.SQL.csproj", "{003702D8-E922-4539-80D4-15AAB22FF29D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonRepository.CachingDecorator", "PersonRepository.CachingDecorator\PersonRepository.CachingDecorator.csproj", "{898C1EA9-324B-48CE-917B-053C842EA0A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{003702D8-E922-4539-80D4-15AAB22FF29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003702D8-E922-4539-80D4-15AAB22FF29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003702D8-E922-4539-80D4-15AAB22FF29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898C1EA9-324B-48CE-917B-053C842EA0A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898C1EA9-324B-48CE-917B-053C842EA0A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898C1EA9-324B-48CE-917B-053C842EA0A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898C1EA9-324B-48CE-917B-053C842EA0A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{D5EA2B55-CE76-49F6-8FF7-B62723AC45D5} = {BD007A91-31FD-4C9A-87BB-C74D479E8592}
 		{22D242EB-8113-49E3-8CC9-03A41E3B185E} = {3E718516-DFA5-4CF0-8021-45B0236D9C1F}
 		{003702D8-E922-4539-80D4-15AAB22FF29D} = {3E718516-DFA5-4CF0-8021-45B0236D9C1F}
+		{898C1EA9-324B-48CE-917B-053C842EA0A0} = {3E718516-DFA5-4CF0-8021-45B0236D9C1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9C4C3EB-0981-4FEC-AD87-46BE1B5688D9}

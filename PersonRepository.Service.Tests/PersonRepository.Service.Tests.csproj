@@ -66,9 +66,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\People.Service\People.Service.csproj">
       <Project>{5fe8ad75-b070-4a7f-9587-c40ee51bdd44}</Project>
       <Name>People.Service</Name>
@@ -85,6 +82,9 @@
       <Project>{8eba64e3-198d-4456-b9bf-d7ef9bd2cbce}</Project>
       <Name>PersonRepository.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

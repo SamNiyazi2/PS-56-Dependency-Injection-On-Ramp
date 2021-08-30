@@ -11,7 +11,25 @@ namespace PersonRepository.Service
     // public class ServiceRepository
     public class ServiceRepository : IPersonRepository
     {
-        PersonServiceClient ServiceProxy = new PersonServiceClient();
+
+        // 08/30/2021 10:09 am - SSN - [20210830-1006] - [001] - M04-04 - Demo: Property injection and unit testing
+        // PersonServiceClient ServiceProxy = new PersonServiceClient();
+
+        private IPersonService _serviceProxy;
+
+        public IPersonService ServiceProxy
+        {
+            get {
+
+                if (_serviceProxy == null) _serviceProxy = new PersonServiceClient();
+                return _serviceProxy;
+
+            }
+
+            set { _serviceProxy = value; }
+
+        }
+
 
         public IEnumerable<Person> GetPeople()
         {

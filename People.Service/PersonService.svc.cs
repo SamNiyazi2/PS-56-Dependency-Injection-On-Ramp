@@ -13,18 +13,24 @@ namespace People.Service
             {
                 new Person() { FirstName="John", LastName="Koenig",
                     StartDate = new DateTime(1975, 10, 17), Rating=6 },
-                new Person() { FirstName="Dylan", LastName="Hunt", 
+                new Person() { FirstName="Dylan", LastName="Hunt",
                     StartDate = new DateTime(2000, 10, 2), Rating=8 },
-                new Person() { FirstName="John", LastName="Crichton", 
+                new Person() { FirstName="John", LastName="Crichton",
                     StartDate = new DateTime(1999, 3, 19), Rating=7 },
-                new Person() { FirstName="Dave", LastName="Lister", 
+                new Person() { FirstName="Dave", LastName="Lister",
                     StartDate = new DateTime(1988, 2, 15), Rating=9 },
-                new Person() { FirstName="John", LastName="Sheridan", 
+                new Person() { FirstName="John", LastName="Sheridan",
                     StartDate = new DateTime(1994, 1, 26), Rating=6 },
-                new Person() { FirstName="Dante", LastName="Montana", 
+                new Person() { FirstName="Dante", LastName="Montana",
                     StartDate = new DateTime(2000, 11, 1), Rating=5 },
-                new Person() { FirstName="Isaac", LastName="Gampu", 
-                    StartDate = new DateTime(1977, 9, 10), Rating=4 }
+                new Person() { FirstName="Isaac", LastName="Gampu",
+                    StartDate = new DateTime(1977, 9, 10), Rating=4 },
+
+                new Person() { FirstName="John", LastName="Doe",
+                    StartDate = new DateTime(2000, 1, 1), Rating=4 },
+                new Person() { FirstName="Mary", LastName="Jane",
+                    StartDate = new DateTime(1990, 2, 2), Rating=9 }
+
             };
             return p;
         }
@@ -35,17 +41,17 @@ namespace People.Service
             {
                 new Person() { FirstName="John", LastName="Koenig",
                     StartDate = new DateTime(1975, 10, 17), Rating=6 },
-                new Person() { FirstName="Dylan", LastName="Hunt", 
+                new Person() { FirstName="Dylan", LastName="Hunt",
                     StartDate = new DateTime(2000, 10, 2), Rating=8 },
-                new Person() { FirstName="John", LastName="Crichton", 
+                new Person() { FirstName="John", LastName="Crichton",
                     StartDate = new DateTime(1999, 3, 19), Rating=7 },
-                new Person() { FirstName="Dave", LastName="Lister", 
+                new Person() { FirstName="Dave", LastName="Lister",
                     StartDate = new DateTime(1988, 2, 15), Rating=9 },
-                new Person() { FirstName="John", LastName="Sheridan", 
+                new Person() { FirstName="John", LastName="Sheridan",
                     StartDate = new DateTime(1994, 1, 26), Rating=6 },
-                new Person() { FirstName="Dante", LastName="Montana", 
+                new Person() { FirstName="Dante", LastName="Montana",
                     StartDate = new DateTime(2000, 11, 1), Rating=5 },
-                new Person() { FirstName="Isaac", LastName="Gampu", 
+                new Person() { FirstName="Isaac", LastName="Gampu",
                     StartDate = new DateTime(1977, 9, 10), Rating=4 }
             };
 

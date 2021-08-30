@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleViewer.Unity", "Peopl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleViewer.Ninject", "PeopleViewer.Ninject\PeopleViewer.Ninject.csproj", "{966D6C0A-82A6-4401-B4BA-5976EEEA92B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleViewer.Unity.LateBinding", "PeopleViewer.Unity.LateBinding\PeopleViewer.Unity.LateBinding.csproj", "{730DD955-427C-451E-94FD-555D9BCED9AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,10 @@ Global
 		{966D6C0A-82A6-4401-B4BA-5976EEEA92B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{966D6C0A-82A6-4401-B4BA-5976EEEA92B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{966D6C0A-82A6-4401-B4BA-5976EEEA92B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{730DD955-427C-451E-94FD-555D9BCED9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730DD955-427C-451E-94FD-555D9BCED9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730DD955-427C-451E-94FD-555D9BCED9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730DD955-427C-451E-94FD-555D9BCED9AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +135,7 @@ Global
 		{D6CDA395-E1BE-4E3A-9AF5-DDB43FB9C607} = {3E79D45D-DD1E-4A71-8AF0-30F2E8944C64}
 		{82F45565-69FF-466B-86DA-9E2B740A5BF1} = {51E9BDC9-774E-4E13-8546-53D219DF10A6}
 		{966D6C0A-82A6-4401-B4BA-5976EEEA92B1} = {51E9BDC9-774E-4E13-8546-53D219DF10A6}
+		{730DD955-427C-451E-94FD-555D9BCED9AB} = {51E9BDC9-774E-4E13-8546-53D219DF10A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F9C4C3EB-0981-4FEC-AD87-46BE1B5688D9}

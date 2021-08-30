@@ -1,6 +1,8 @@
 ﻿using PeopleViewer.Presentation;
+using PersonRepository.CSV;
 using PersonRepository.Interface;
 using PersonRepository.Service;
+using PersonRepository.SQL;
 using System.Windows;
 
 namespace PeopleViewer
@@ -22,7 +24,11 @@ namespace PeopleViewer
 
         private static PeopleViewerViewModel ComposeViewModel()
         {
-            IPersonRepository personRepository = new ServiceRepository();
+
+            // 08/30/2021 06:47 am - SSN - [20210827-1701] - [007] - M03-03 - Demo: Additional repositories
+            // IPersonRepository personRepository = new ServiceRepository();
+            // IPersonRepository personRepository = new CSVRepository("CSVFileName");
+            IPersonRepository personRepository = new SQLRepository();
             PeopleViewerViewModel vm = new PeopleViewerViewModel(personRepository);
             return vm;
         }

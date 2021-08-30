@@ -101,6 +101,10 @@
       <Project>{d5ea2b55-ce76-49f6-8ff7-b62723ac45d5}</Project>
       <Name>PeopleViewer.View</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.CSV\PersonRepository.CSV.csproj">
+      <Project>{22d242eb-8113-49e3-8cc9-03a41e3b185e}</Project>
+      <Name>PersonRepository.CSV</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonRepository.Interface\PersonRepository.Interface.csproj">
       <Project>{9382F954-4AF4-4DCF-8727-77CDE901D6A4}</Project>
       <Name>PersonRepository.Interface</Name>
@@ -108,6 +112,10 @@
     <ProjectReference Include="..\PersonRepository.Service\PersonRepository.Service.csproj">
       <Project>{8EBA64E3-198D-4456-B9BF-D7EF9BD2CBCE}</Project>
       <Name>PersonRepository.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonRepository.SQL\PersonRepository.SQL.csproj">
+      <Project>{003702d8-e922-4539-80d4-15aab22ff29d}</Project>
+      <Name>PersonRepository.SQL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

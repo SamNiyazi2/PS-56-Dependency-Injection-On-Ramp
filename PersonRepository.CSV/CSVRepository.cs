@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Text;
 using System.Windows;
 
 namespace PersonRepository.CSV
@@ -31,6 +32,8 @@ namespace PersonRepository.CSV
             }
             else
             {
+                
+
                 using (var sr = new StreamReader(path))
                 {
                     string line;
@@ -50,6 +53,8 @@ namespace PersonRepository.CSV
             }
             return people;
         }
+         
+
 
         public Person GetPerson(string lastName)
         {

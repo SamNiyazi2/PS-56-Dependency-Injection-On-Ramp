@@ -63,13 +63,13 @@
     <Compile Include="Converters.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PeopleViewer.Presentation\PeopleViewer.Presentation.csproj">

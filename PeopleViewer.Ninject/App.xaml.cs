@@ -7,8 +7,12 @@ using PersonRepository.SQL;
 using System.Windows;
 
 // 08/30/2021 12:46 pm - SSN - [20210830-1246] - [001] -  M05-04 - Demo: Using Ninject 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Ninject;
-using Ninject.Parameters;
+using Ninject.Planning.Bindings;
 
 namespace PeopleViewer
 {
@@ -17,40 +21,127 @@ namespace PeopleViewer
 
         IKernel Container;
 
+        PeopleViewerWindow mw = null;
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            ConfigureContainer();
-            ComposeObjects();
-            Application.Current.MainWindow.Show();
+
+
+            ConfigureContainer("api", false);
+            ComposeObjects("api", false);
         }
 
 
-        private void ConfigureContainer()
+        private void ConfigureContainer(string dataSourceSelected, bool useCaching)
         {
+
+
+            if (Container != null)
+            {
+                while (!Container.IsDisposed)
+                {
+                    Container.Dispose();
+                }
+            }
 
             Container = new StandardKernel();
 
 
-            Container.Bind<IPersonRepository>().To<ServiceRepository>()
-            // Container.Bind<IPersonRepository>().To<CSVRepository>()
-            // Container.Bind<IPersonRepository>().To<SQLRepository>()
 
-                .InSingletonScope()
-                // .InThreadScope();
-                // .InTransientScope();
 
-                // Needed when applying CSVRepository.  Does not affect the other two.
-                .WithConstructorArgument("fullCSVFileName", "CSVFileName");
+            // .InSingletonScope()
+            // .InThreadScope();
+            // .InTransientScope();
+
+            switch (dataSourceSelected)
+            {
+                case "api":
+                    Container.Bind<IPersonRepository>().To<ServiceRepository>()
+                        .InSingletonScope();
+                    break;
+
+                case "csv":
+                    Container.Bind<IPersonRepository>().To<CSVRepository>()
+                        .InSingletonScope()
+                        .WithConstructorArgument("fullCSVFileName", "CSVFileName");
+                    break;
+
+                case "sql":
+                    Container.Bind<IPersonRepository>().To<SQLRepository>()
+                        .InSingletonScope();
+                    break;
+
+                default:
+                    throw new Exception($"No case for dataSourceSelected [{dataSourceSelected}] (20210831-1001)");
+
+            }
 
         }
 
 
 
-        private void ComposeObjects()
+        private void ComposeObjects(string dataSourceSelected, bool useCaching)
         {
-            Application.Current.MainWindow = Container.Get<PeopleViewerWindow>();
+
+            if (Application.Current.MainWindow != null)
+            {
+                Application.Current.MainWindow.Hide();
+            }
+
+            mw = Container.Get<PeopleViewerWindow>();
+
+            PeopleViewerViewModel vm = ((PeopleViewerViewModel)mw.DataContext);
+
+
+            vm.DataSourceSelected = dataSourceSelected;
+            vm.DataSourceSelectionVisible = true; 
+            vm.UseCachingOptionVisible = false;
+
+            mw.PropertyChanged += Mw_PropertyChanged;
+
+            Application.Current.MainWindow = mw;
+
             Application.Current.MainWindow.Title = "DI with Ninject - People Viewer";
+
+            Application.Current.MainWindow.Show();
+            Application.Current.MainWindow.UpdateLayout();
+
+
+
         }
+
+
+
+        private void Mw_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+
+            if (e.PropertyName == "DataSourceSelected" || e.PropertyName == "UseCachingSelected")
+            {
+                Type type = sender.GetType();
+
+                if (type.Name == "PeopleViewerWindow")
+                {
+                    PeopleViewerWindow _mw = sender as PeopleViewerWindow;
+
+                    PeopleViewerViewModel _vm = _mw.DataContext as PeopleViewerViewModel;
+
+                    if (_vm != null)
+                    {
+                        string dataSourceSelected = _vm.DataSourceSelected;
+                        bool useCaching = _vm.UseCachingSelected;
+
+                        ConfigureContainer(dataSourceSelected, useCaching);
+                        ComposeObjects(dataSourceSelected, useCaching);
+                    }
+                }
+            }
+
+        }
+
+
+
+
     }
 }
